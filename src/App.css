@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+.hero_section_background {
+  height: 449px;
+  background-image: url(./assets/caard.png);
+  background-position: center;
+  background-size: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.share_icon {
+  background-image: url(./assets/share_icon.png);
+  background-position: center;
+  width: 64px;
+  height: 64px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-radius: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+._card {
+  height: 292px;
+  background-position: center;
+  background-size: cover;
+  transition: 250ms all ease-in-out;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+._card_event{
+  height: 292px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+._card:hover {
+  scale: 1.05;
+}
+.date_box {
+  width: 54px;
+  height: 54px;
+}
+.absolute_wrapper {
+  width: 100%;
+  position: absolute;
+  top: 100;
+  right: 0;
+}
+.wrap {
+  min-height: 40vh;
+  position: relative;
+  top: -100px;
+}
+.text_wrap{
+  width: 50%;
+}
+.tags{
+  padding: 5px 10px;
+  background-color: #FFEAA7;
+  width: fit-content;
+  border-radius: 5px;
+}
+.tags >p{
+  font-size: 14px;
+  font-weight: 500;
+}
+.circle{
+  width: 30px;
+  height: 30px;
+  background-color: #F3B95F;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quantityInput{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+.button{
+  outline: none;
+  background-color: #F3B95F;
+  border: none;
+  border-radius: 20px;
+}
+.checkout_wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f9fb;
+}
+.fields_container{
+  width: 30%;
+  background-color: #fff;
+}
+.modal{
+  width: 100vw;
+}
+.submit_button{
+  outline: none;
+  border: none;
+  width: 50%;
+  padding: 10px 0px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #F3B95F;
+  margin: 20px auto;
+  color: #1d1b2e;
+}
+@media only screen and (max-width: 1200px) {
+  .text_wrap{
+    width: 75%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 569px) {
+  ._card{
+    height: 250px;
+  }
+  ._card_event{
+    height: 250px;
+
   }
 }
