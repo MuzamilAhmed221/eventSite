@@ -9,6 +9,8 @@ import ErrorPage404 from "./pages/ErrorPage404";
 
 function App() {
   axios.defaults.baseURL = 'http://eventapp2-env.eba-qupg2a9j.ap-southeast-2.elasticbeanstalk.com/'
+  // axios.defaults.baseURL = "http://192.168.100.127:5000";
+
   return (
     <div className="App">
      <BrowserRouter>
@@ -17,8 +19,6 @@ function App() {
         <Route path='/eventdetails/:id' element={<EventDetails/>} />
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/:id' element={<ErrorPage404/>} />
-
-
       </Routes>
      </BrowserRouter>
     </div>

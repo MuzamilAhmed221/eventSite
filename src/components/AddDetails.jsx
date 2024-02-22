@@ -3,7 +3,7 @@ import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import "../App.css";
 
 const AddDetails = (props) => {
-  const { form, setForm } = props;
+  const { form, setForm ,organizationDetails} = props;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({
@@ -23,7 +23,7 @@ const AddDetails = (props) => {
         <Row className="mt-4">
           <Col md="12">
             <Form.Control
-              size="lg"
+              size="md"
               type="text"
               name="name"
               onChange={handleChange}
@@ -34,7 +34,7 @@ const AddDetails = (props) => {
         <Row className="mt-4">
           <Col md="12">
             <Form.Control
-              size="lg"
+              size="md"
               type="text"
               name="surname"
               onChange={handleChange}
@@ -45,7 +45,7 @@ const AddDetails = (props) => {
         <Row className="mt-4">
           <Col md="12">
             <Form.Control
-              size="lg"
+              size="md"
               type="email"
               name="email"
               onChange={handleChange}
@@ -56,7 +56,7 @@ const AddDetails = (props) => {
         <Row className="mt-4">
           <Col md="12">
             <Form.Control
-              size="lg"
+              size="md"
               type="tel"
               name="number"
               onChange={handleChange}
@@ -67,7 +67,7 @@ const AddDetails = (props) => {
         <Row className="mt-4">
           <Col md="12">
             <Form.Control
-              size="lg"
+              size="md"
               type="text"
               name="date_of_birth"
               onChange={handleChange}
@@ -75,7 +75,7 @@ const AddDetails = (props) => {
             />
           </Col>
         </Row>
-        <button className="submit_button">Submit</button>
+        <button className="submit_button">Buy Now</button>
       </Modal.Body>
     </Modal>
   );
