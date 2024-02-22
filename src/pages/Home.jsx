@@ -26,7 +26,6 @@ const Home = () => {
       console.log(e);
     }
   }, []);
-console.log(organizations?.displayImage  );
   return (
     <div className="App">
       <Container

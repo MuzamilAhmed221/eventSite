@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import age from "../assets/cake.svg";
@@ -6,6 +6,7 @@ import hanger from "../assets/clotheshanger.svg";
 import plus from "../assets/plus.svg";
 import minus from "../assets/dash.svg";
 import AddDetails from "../components/AddDetails";
+import axios from "axios";
 
 const EventDetails = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -18,8 +19,29 @@ const EventDetails = (props) => {
   })
   const location = useLocation();
   const [quantity, setQuantity] = useState(0);
+  const [event, setEvent] = useState(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-const navigate = useNavigate()
+  useEffect(() => {
+    try {
+      if (id != undefined) {
+        axios
+          .get(`events/${id}`)
+          .then((res) => {
+           setEvent(res.data?.data);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      } else {
+        navigate("/here");
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+  console.log(event);
 
   const _onAdd = () => {
     setQuantity((prev) => prev + 1);
@@ -27,7 +49,6 @@ const navigate = useNavigate()
   const _onSubtract = () => {
     setQuantity((prev) => (quantity > 0 ? prev - 1 : 0));
   };
-  console.log(form);
   return (
     <div className="App">
       <Container fluid className="hero_section_background p-4">
